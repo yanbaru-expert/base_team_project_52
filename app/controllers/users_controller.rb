@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.select("name")
+  end
+
   def new
     @user = User.new
   end
