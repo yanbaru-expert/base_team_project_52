@@ -17,6 +17,16 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  def edit
+    @message = Message.find(params[:id])
+  end
+
+  # updateは、オブジェクト生成しないのでインスタンスをDBから取得する
+  def update
+    message = Message.find(params[:id])
+    message.update(message_params)
+  end
+
   private
   # paramsはHTTPリクエストパラメーター(入力データ)のハッシュが格納されている変数
   def message_params
