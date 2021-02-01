@@ -13,6 +13,10 @@ class MessagesController < ApplicationController
     Message.create(message_params)
   end
 
+  def show
+    @message = Message.find(params[:id])
+  end
+
   private
   # paramsはHTTPリクエストパラメーター(入力データ)のハッシュが格納されている変数
   def message_params

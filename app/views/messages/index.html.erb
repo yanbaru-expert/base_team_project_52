@@ -3,5 +3,6 @@
 <% @messages.each do |message| %>
 <p>
   <%= message.title %>
+  <%= link_to "詳細", message_path(message.id) %>
 </p>
 <% end %>
