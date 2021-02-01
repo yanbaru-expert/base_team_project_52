@@ -27,6 +27,11 @@ class MessagesController < ApplicationController
     message.update(message_params)
   end
 
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy
+  end
+
   private
   # paramsはHTTPリクエストパラメーター(入力データ)のハッシュが格納されている変数
   def message_params
